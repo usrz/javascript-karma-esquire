@@ -1,0 +1,21 @@
+{
+  "name": "karma-esquire",
+  "version": "0.0.0",
+  "description": "Esquire support in Karma (as a framework)",
+  "main": "karma.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/usrz/javascript-karma-esquire.git"
+  },
+  "keywords": [
+    "karma-plugin"
+  ],
+  "author": {
+    "name": "Pier Fumagalli",
+    "email": "pier@usrz.com"
+  },
+  "license": "Apache 2.0",
+  "dependencies": {
+    "esquire": "https://github.com/usrz/javascript-esquire/tarball/master"
+  }
+}
