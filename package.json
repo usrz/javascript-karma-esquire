@@ -2,7 +2,7 @@
   "name": "karma-esquire",
   "version": "0.0.0",
   "description": "Esquire support in Karma (as a framework)",
-  "main": "karma.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/usrz/javascript-karma-esquire.git"
