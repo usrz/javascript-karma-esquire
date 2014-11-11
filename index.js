@@ -12,8 +12,7 @@ var pattern = function(file) {
 var factory = function(files) {
   // Reverse unshift order (inject -> load -> karma)
   files.unshift(pattern(__dirname, "adapter.js"));
-  files.unshift(pattern(__dirname, "node_modules", "esquire", "src", "esquire-load.js"));
-  files.unshift(pattern(__dirname, "node_modules", "esquire", "src", "esquire-inject.js"));
+  files.unshift(pattern(__dirname, "node_modules", "esquire", "esquire.min.js"));
 };
 
 factory.$inject = ['config.files'];
