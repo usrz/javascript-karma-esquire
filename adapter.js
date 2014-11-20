@@ -2,6 +2,31 @@
 
 (function(window) {
 
+  /* Hold all describe(...) it(...) calls */
+  var _describe = window.describe;
+  var _it = window.it;
+
+  var _modules = [];
+  var _last = 0;
+
+  window.describe = function() {
+    var test = "$$esquire$$/describe/" + (++_last);
+    _modules.push(test);
+    var args = arguments;
+    Esquire.define(test, [], function() {
+      _describe.apply(window, args);
+    });
+  };
+
+  window.it = function() {
+    var test = "$$esquire$$/it/" + (++_last);
+    _modules.push(test);
+    var args = arguments;
+    Esquire.define(test, [], function() {
+      _it.apply(window, args);
+    });
+  };
+
   /* Placeholder in case we are loaded first */
   if (! window.Esquire) window.Esquire = {};
 
@@ -26,6 +51,10 @@
 
     /* Replace Karma's loaded handler */
     karma.loaded = function() {
+      window.describe = _describe;
+      window.it = _it;
+      for (var i in _modules) esquire(_modules[i]);
+
 
       /* Use a dictionary, remove duplicates */
       var scripts = {};
