@@ -11,7 +11,7 @@ library and (optionally) a number of scripts before running
 Install with [NPM](http://www.npmjs.com/):
 
 ```sh
-npm install --save-dev 'https://github.com/usrz/javascript-esquire/tarball/master'
+npm install --save-dev karma-esquire
 ```
 
 Then just add the `esquire` module to your listed `frameworks` in _karma.conf.js_.

@@ -16,6 +16,6 @@
   },
   "license": "Apache 2.0",
   "dependencies": {
-    "esquire": "https://github.com/usrz/javascript-esquire/tarball/master"
+    "esquire": "^0.0.1"
   }
 }
