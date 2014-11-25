@@ -1,6 +1,6 @@
 {
   "name": "karma-esquire",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Esquire support in Karma (as a framework)",
   "main": "index.js",
   "repository": {
@@ -15,7 +15,8 @@
     "email": "pier@usrz.com"
   },
   "license": "Apache 2.0",
-  "dependencies": {
-    "esquire": "^0.0.1"
+  "peerDependencies": {
+    "esquire": "^1.0.0",
+    "karma": "^0.12.24"
   }
 }

@@ -10,15 +10,15 @@ var pattern = function(file) {
 };
 
 var factory = function(files) {
-  var esquire = require.resolve('esquire');
-  var adapter = path.join(__dirname, "adapter.js");
-  var browser = path.join(path.dirname(esquire), "src", "esquire-inject.js");
-  var loader  = path.join(path.dirname(esquire), "src", "esquire-load.js");
+  require("esquire");
+
+  var dir = path.dirname(require.resolve('esquire'));
 
   // Reverse unshift order (inject -> load -> karma)
-  files.unshift(pattern(adapter));
-  files.unshift(pattern(browser));
-  files.unshift(pattern(loader));
+  files.unshift(pattern(path.join(dir, "ext", "karma.js")));
+  files.unshift(pattern(path.join(dir, "ext", "mocha.js")));
+  files.unshift(pattern(path.join(dir, "src", "loader.js")));
+  files.unshift(pattern(path.join(dir, "src", "esquire.js")));
 };
 
 factory.$inject = ['config.files'];
